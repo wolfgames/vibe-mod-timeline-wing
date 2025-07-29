@@ -1,0 +1,285 @@
+{
+  "evidence": [
+    {
+      "id": "dig-1",
+      "name": "Security Log: Charles Ejected",
+      "description": "The museum's security log notes that Charles Rosen was forcibly removed from the premises by two guards following the public altercation. No specific time, just \"at party\"",
+      "type": "document",
+      "location": "Security Office",
+      "timeHappened": "2028-02-15T22:00",
+      "timeHappenedDescription": "This provides a potential alibi for Charles for the actual time of poisoning.",
+      "isHidden": false
+    },
+    {
+      "id": "doc-1",
+      "name": "Divorce Papers",
+      "description": "Legal documents showing that Zephyr Beaumont initiated divorce proceedings against her husband, Charles Rosen, two weeks prior",
+      "type": "document",
+      "timeHappened": "2028-02-01T10:00",
+      "timeHappenedDescription": "Establishes a strong motive for Charles Rosen.",
+      "isHidden": false,
+      "location": "Zephyr's Home"
+    },
+    {
+      "id": "1753137562520",
+      "name": "Zephyr and Charles at Party",
+      "description": "Earliest found CCTV of Zephyr and Charles at Party at 9:15pm",
+      "type": "cctv",
+      "location": "Party",
+      "imageUrl": "",
+      "timeHappened": "2028-02-15T21:15",
+      "timeDiscovered": "",
+      "timeHappenedAnchor": false,
+      "timeDiscoveredAnchor": false,
+      "timeHappenedDescription": "This may be when they first appear together.",
+      "timeDiscoveredDescription": "",
+      "isHidden": false
+    },
+    {
+      "id": "cctv-2",
+      "name": "Ethan Green seen",
+      "description": "One Museum staff member saw someone fitting Ethan Green during the start of the party, but was denied entry for lack of invitation.",
+      "type": "testimonial",
+      "location": "Service Hallway",
+      "timeHappened": "2028-02-15T21:00",
+      "timeHappenedDescription": "Ethan was definitely seen at the party.",
+      "isHidden": false,
+      "imageUrl": "https://static.casescope.com/uploads/c168e973-52e5-4306-a780-2798327bc6af.png"
+    },
+    {
+      "id": "test-1",
+      "name": "Jonathan with Zephyr",
+      "description": "Jonathan, her business partner, states he was talking with Zephyr sometime after he arrived.  She was not with Charles but didnt want to talk about it. He only spoke for a few minutes before she excused herself for feeling a bit ill. She was drinking something.",
+      "type": "testimonial",
+      "timeHappened": "2028-02-15T22:20",
+      "timeHappenedDescription": "She was in contact with Jonathan.",
+      "isHidden": false
+    },
+    {
+      "id": "doc-2",
+      "name": "Threatening Letter",
+      "description": "Charles reveal an anonymous, typed letter sent to Zephyr's office the day before the gala. It reads: 'You'll get what you deserve for what you did.'",
+      "type": "document",
+      "timeHappened": "2028-02-14T11:30",
+      "timeHappenedDescription": "Shows premeditation by an unknown party.",
+      "isHidden": false,
+      "location": "Zephyr's Home"
+    },
+    {
+      "id": "cctv-1",
+      "name": "Zephyr and Charles Back Stairwell",
+      "description": "Security footage shows Zephyr in a heated argument with her husband, Charles Rosen in back staircase at 9:45pm",
+      "type": "cctv",
+      "location": "Grand Staircase",
+      "timeHappened": "2028-02-15T21:45",
+      "timeHappenedDescription": "Charles Rosen was publicly hostile towards the victim shortly before her death.",
+      "isHidden": false,
+      "imageUrl": "https://static.casescope.com/uploads/03c8f6f0-341a-492a-b0e7-3f9bc2764020.png"
+    },
+    {
+      "id": "1753140056453",
+      "name": "Isabella at Party",
+      "description": "According to Isabella, she arrived at the party around 9:30pm but doesnt remember much due to being drunk.",
+      "type": "testimonial",
+      "location": "Party",
+      "imageUrl": "",
+      "timeHappened": "2028-02-15T21:30",
+      "timeDiscovered": "",
+      "timeHappenedAnchor": false,
+      "timeDiscoveredAnchor": false,
+      "timeHappenedDescription": "",
+      "timeDiscoveredDescription": "",
+      "isHidden": false
+    },
+    {
+      "id": "cctv-3",
+      "name": "Waiter with Champagne",
+      "description": "An unknown waiter is seen leaving the kitchen area carrying a tray with a single glass of champagne, heading towards the main hall. ",
+      "type": "cctv",
+      "location": "Main Hall Entrance",
+      "timeHappened": "2028-02-15T22:15",
+      "timeHappenedDescription": "This happened minutes before Zephyr was seen with a similar glass.",
+      "isHidden": false,
+      "imageUrl": "https://static.casescope.com/uploads/08d03fe0-c6bc-4294-bbe3-0f3dca81a437.png"
+    },
+    {
+      "id": "evt-2",
+      "name": "Isabella Discovers Body in Restroom",
+      "description": "Socialite Rival Isabella Moreau finds Zephyr Beaumont unresponsive at 10:45pm in the women's washroom.  ",
+      "type": "event",
+      "location": "Women's Restroom",
+      "timeHappened": "2028-02-15T22:45",
+      "timeHappenedAnchor": true,
+      "timeHappenedDescription": "No one else was presence in the washroom",
+      "isHidden": false
+    },
+    {
+      "id": "1753140339480",
+      "name": "Jonathan at Party",
+      "description": "Earliest found CCTV of Jonathan at the party by himself.",
+      "type": "cctv",
+      "location": "Party",
+      "imageUrl": "",
+      "timeHappened": "2028-02-15T22:10",
+      "timeDiscovered": "",
+      "timeHappenedAnchor": false,
+      "timeDiscoveredAnchor": false,
+      "timeHappenedDescription": "Could be when he arrived at party",
+      "timeDiscoveredDescription": "",
+      "isHidden": false
+    },
+    {
+      "id": "phy-2",
+      "name": "Discarded Waiter Uniform",
+      "description": "A waiter's uniform was found hastily discarded in a dumpster behind the museum shortly after the police arrives by security",
+      "type": "physical",
+      "location": "Rear Alley Dumpster",
+      "timeDiscovered": "2028-02-15T23:30",
+      "timeDiscoveredDescription": "Suggesting the killer used a disguise and disposed of it.",
+      "isHidden": false
+    },
+    {
+      "id": "test-3",
+      "name": "Ethan's Interview",
+      "description": "When questioned, Ethan Green refuses to answer any questions about his whereabouts at the gala and immediately requests a lawyer.",
+      "type": "testimonial",
+      "timeHappened": "2028-02-16T10:00",
+      "timeHappenedDescription": "Ethan's evasiveness is highly suspicious, occurring during the initial investigation.",
+      "isHidden": true
+    },
+    {
+      "id": "phy-1",
+      "name": "Poisoned Champagne Flute",
+      "description": "A champagne flute containing residue of a potent, fast-acting poison was discovered in the restroom stall where Zephyr's body was found.",
+      "type": "physical",
+      "location": "Women's Restroom",
+      "timeDiscovered": "2028-02-15T23:00",
+      "timeDiscoveredDescription": "Confirms the method of poisoning, found shortly after the body.",
+      "isHidden": true
+    },
+    {
+      "id": "for-1",
+      "name": "Forensic Report on Uniform",
+      "description": "The forensic lab reports two key findings from the discarded uniform: 1) Traces of the same poison found in Zephyr's glass. 2) DNA from sweat on the collar that is a conclusive match to Ethan Green.",
+      "type": "forensic",
+      "timeHappened": "2028-02-16T09:00",
+      "timeHappenedDescription": "This is the final piece of evidence directly linking Ethan Green to the murder plot, discovered after the uniform was found.",
+      "isHidden": true
+    },
+    {
+      "id": "test-4",
+      "name": "Witness Account: Zephyr's Last Drink",
+      "description": "A gala guest recalls seeing Zephyr Beaumont holding a champagne flute and looking well, shortly before she rushed to the restroom.",
+      "type": "testimonial",
+      "timeHappened": "2028-02-15T22:25",
+      "timeHappenedDescription": "Indicates Zephyr consumed the poisoned drink shortly before feeling ill.",
+      "isHidden": true
+    },
+    {
+      "id": "test-2",
+      "name": "Charles' Alibi",
+      "description": "During his interview, Charles Rosen provides a confirmed alibi. After being ejected, he was arrested for public intoxication and was in a police holding cell from 10:30 PM until the next morning.",
+      "type": "testimonial",
+      "timeHappened": "2028-02-15T22:30",
+      "timeHappenedDescription": "Charles was in police custody, eliminating him as the physical poisoner.",
+      "isHidden": true
+    },
+    {
+      "id": "sms-1",
+      "name": "SMS: Ethan to Accomplice",
+      "description": "A recovered text message from Ethan Green's phone to an unknown number: 'It's done. Get rid of the uniform. Meet at the usual spot.'",
+      "type": "sms",
+      "timeHappened": "2028-02-15T22:50",
+      "timeHappenedDescription": "Sent shortly after Zephyr's death, indicating a cover-up.",
+      "isHidden": true
+    },
+    {
+      "id": "evt-1",
+      "name": "Zephyr Rushes to Restroom",
+      "description": "Witnesses report seeing Zephyr Beaumont suddenly look pale and rush from the main hall towards the restrooms.",
+      "type": "event",
+      "location": "Main Hall",
+      "timeHappened": "2028-02-15T22:30",
+      "timeHappenedDescription": "The moment the fast-acting poison began to take effect.",
+      "isHidden": true
+    }
+  ],
+  "connections": [],
+  "gameSettings": {
+    "maxAttempts": 0,
+    "caseTitle": "The Beaumont Gala Murder",
+    "objective": "Renowned philanthropist Zephyr Beaumont was poisoned during the annual museum gala. Reconstruct the timeline of events to deduce the culprit. Drag and drop the evidence into the correct chronological order to reveal what truly happened to Zephyr Beaumont.",
+    "questionType": "timeline",
+    "questionText": "Reconstruct the timeline of events from the night of the murder. Drag and drop the evidence into the correct chronological order to reveal what truly happened to Zephyr Beaumont.",
+    "maxEvidenceSelection": 2,
+    "invalidConnection": "These pieces of evidence don't reveal any meaningful connection."
+  },
+  "evidenceTypes": [
+    {
+      "id": "physical",
+      "name": "Physical",
+      "color": "bg-red-100 text-red-800"
+    },
+    {
+      "id": "witness",
+      "name": "Witness",
+      "color": "bg-blue-100 text-blue-800"
+    },
+    {
+      "id": "document",
+      "name": "Document",
+      "color": "bg-green-100 text-green-800",
+      "defaultImageUrl": "https://static.casescope.com/uploads/e0363e14-117a-47e2-9863-f90d985f2781.png"
+    },
+    {
+      "id": "digital",
+      "name": "Digital",
+      "color": "bg-purple-100 text-purple-800"
+    },
+    {
+      "id": "forensic",
+      "name": "Forensic",
+      "color": "bg-orange-100 text-orange-800"
+    },
+    {
+      "id": "photo",
+      "name": "Photo",
+      "color": "bg-pink-100 text-pink-800"
+    },
+    {
+      "id": "testimonial",
+      "name": "Testimonial",
+      "color": "bg-cyan-100 text-cyan-800"
+    },
+    {
+      "id": "audio",
+      "name": "Audio",
+      "color": "bg-lime-100 text-lime-800",
+      "defaultImageUrl": "https://static.casescope.com/uploads/49bb4ae8-829b-44fc-aceb-c1590a15af49.png"
+    },
+    {
+      "id": "cctv",
+      "name": "CCTV",
+      "color": "bg-indigo-100 text-indigo-800"
+    },
+    {
+      "id": "sms",
+      "name": "SMS",
+      "color": "bg-purple-100 text-purple-800",
+      "defaultImageUrl": "https://static.casescope.com/uploads/4fbec10c-d0b2-40d3-b3d1-a5d3a41296cf.png"
+    },
+    {
+      "id": "email",
+      "name": "Email",
+      "color": "bg-purple-100 text-purple-800",
+      "defaultImageUrl": "https://static.casescope.com/uploads/20bc4d15-0802-4c03-b08a-ffda6a8105d6.png"
+    },
+    {
+      "id": "event",
+      "name": "Event",
+      "color": "bg-yellow-100 text-yellow-800"
+    }
+  ],
+  "exportDate": "2025-07-22T00:37:26.730Z",
+  "version": "1.2"
+}

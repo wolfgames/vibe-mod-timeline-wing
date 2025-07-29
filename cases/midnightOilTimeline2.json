@@ -1,0 +1,210 @@
+{
+  "evidence": [
+    {
+      "id": "test-3",
+      "name": "Neighbor's Testimony",
+      "description": "A neighbor reported hearing a loud crash from the Vance property. They couldn't recall the exact time, only that it was 'just as the streetlights flickered back on.'",
+      "type": "testimonial",
+      "timeHappened": "2025-07-20T23:01",
+      "timeHappenedDescription": "A noise was heard right as the 90-minute power outage was ending.",
+      "isHidden": false
+    },
+    {
+      "id": "doc-1",
+      "name": "Physician's Visit Log",
+      "description": "Dr. Finch's digital calendar shows a house call to the Vance residence for a routine check-up earlier in the day.",
+      "type": "document",
+      "location": "Dr. Finch's Office Records",
+      "timeHappened": "2025-07-20T16:00",
+      "timeHappenedDescription": "Dr. Finch's visit establishes he was present, but well before the murder.",
+      "isHidden": false
+    },
+    {
+      "id": "evt-1",
+      "name": "Last Email Sent",
+      "description": "The last outgoing email from Arthur Vance's computer was sent to his lawyer at 9:30 PM, discussing changes to his will.",
+      "type": "email",
+      "timeHappened": "2025-07-20T21:30",
+      "timeHappenedAnchor": true,
+      "timeHappenedDescription": "This was Arthur Vance's last known action before the events of the night began.",
+      "isHidden": false
+    },
+    {
+      "id": "evt-death",
+      "name": "When did Arthur Vance die?",
+      "description": "The coroner's preliminary report cannot pinpoint the exact time of death due to the sedative's effects, but places it sometime shortly after the struggle.",
+      "type": "event",
+      "timeHappened": "2025-07-20T23:02",
+      "timeHappenedDescription": "The moment the victim succumbed to the poison.",
+      "isHidden": false
+    },
+    {
+      "id": "sms-1",
+      "name": "Text from Business Partner",
+      "description": "A text message from Marcus Thorne to an unknown contact, sent at 11:45 PM: 'It's done. The old man won't be a problem anymore. The contingency is in place.'",
+      "type": "sms",
+      "location": "Marcus Thorne's Phone",
+      "timeHappened": "2025-07-20T23:45",
+      "timeHappenedDescription": "This message was sent after all events at the house concluded.",
+      "isHidden": false
+    },
+    {
+      "id": "evt-3",
+      "name": "Body Discovered",
+      "description": "The next morning, police arrive at the scene in response to the neighbor's delayed call and discover the body of Arthur Vance in his study.",
+      "type": "event",
+      "location": "Study",
+      "timeDiscovered": "2025-07-21T09:00",
+      "timeDiscoveredAnchor": true,
+      "timeDiscoveredDescription": "The investigation begins with the discovery of the body the next morning.",
+      "isHidden": false
+    },
+    {
+      "id": "dig-1",
+      "name": "Security Log: Front Door 9:55PM",
+      "description": "The smart home's security log shows the front door was accessed with a keycard at 9:55 PM. The log does not indicate if it was an entry or exit.",
+      "type": "digital",
+      "location": "Mansion Security Hub",
+      "timeHappened": "2025-07-20T21:55",
+      "timeHappenedDescription": "This was the last recorded use of the front door before the power outage.",
+      "isHidden": false
+    },
+    {
+      "id": "dig-2",
+      "name": "Security Log: Front Door 11:31PM",
+      "description": "The security log for the front door shows it was opened at 11:31 PM.  No indication of it being an entry or exit.",
+      "type": "digital",
+      "location": "Mansion Security Hub",
+      "timeHappened": "2025-07-20T23:31",
+      "timeHappenedDescription": "This door was used moments after the neighbor heard a crash.",
+      "isHidden": false
+    },
+    {
+      "id": "aud-1",
+      "name": "Voicemail from Assistant",
+      "description": "A frantic voicemail from Evelyn Reed on the victim's phone, left at 9:40 PM. 'Arthur, I'm just seeing your email now. I'm on my way over, I should be there in about 15 minutes.'",
+      "type": "audio",
+      "location": "Victim's Phone",
+      "timeHappened": "2025-07-20T21:40",
+      "timeHappenedDescription": "Evelyn was on her way to the house just before the power went out.",
+      "isHidden": false
+    },
+    {
+      "id": "test-2",
+      "name": "Assistant Leaving",
+      "description": "Evelyn Reed stated she arrived to find Arthur agitated about his will. They had a brief, tense conversation before the power went out. She says she left immediately in the dark, not seeing anyone else.",
+      "type": "testimonial",
+      "timeHappened": "2025-07-20T22:11",
+      "timeHappenedDescription": "Evelyn claims she left right as the power outage began.",
+      "isHidden": false
+    },
+    {
+      "id": "evt-2",
+      "name": "City-Wide Power Outage",
+      "description": "At 10:00 PM, a scheduled power outage affected the entire district for approximately 60 minutes. The victim's mansion backup generator was activated, but only powered essential systems.",
+      "type": "event",
+      "timeHappened": "2025-07-20T22:00",
+      "timeHappenedAnchor": true,
+      "timeHappenedDescription": "The power outage marks the beginning of the critical events.",
+      "isHidden": false
+    },
+    {
+      "id": "phy-1",
+      "name": "Broken Wine Glass",
+      "description": "Shards of a wine glass found in the study. Forensic analysis found traces of a potent sedative. The mess suggests it was knocked over during a period of low visibility, likely during the power outage.",
+      "type": "physical",
+      "location": "Study",
+      "timeHappened": "2025-07-20T22:55",
+      "timeHappenedDescription": "The sedative was administered sometime during the power outage.",
+      "isHidden": false
+    },
+    {
+      "id": "phy-2",
+      "name": "Overturned Bookshelf",
+      "description": "A large bookshelf in the study was toppled over, indicating a violent struggle that happened after the victim was likely incapacitated by the sedative from the wine.",
+      "type": "physical",
+      "location": "Study",
+      "timeHappened": "2025-07-20T23:01",
+      "timeHappenedDescription": "The struggle occurred after the victim was drugged.",
+      "isHidden": false
+    }
+  ],
+  "connections": [],
+  "gameSettings": {
+    "maxAttempts": 0,
+    "caseTitle": "The Midnight Oil",
+    "objective": "Arthur Vance, a reclusive tech millionaire, has been found dead in his study. Suspects include his ambitious business partner, Marcus Thorne; his loyal but frantic assistant, Evelyn Reed; and his personal physician, Dr. Finch. The cause of death is poisoning, but signs of a struggle suggest it wasn't that simple.",
+    "questionType": "timeline",
+    "questionText": "Reconstruct the timeline of events from the night of the murder. Drag and drop the evidence into the correct chronological order to reveal what truly happened.",
+    "maxEvidenceSelection": 2,
+    "invalidConnection": "These pieces of evidence don't reveal any meaningful connection."
+  },
+  "evidenceTypes": [
+    {
+      "id": "physical",
+      "name": "Physical",
+      "color": "bg-red-100 text-red-800"
+    },
+    {
+      "id": "witness",
+      "name": "Witness",
+      "color": "bg-blue-100 text-blue-800"
+    },
+    {
+      "id": "document",
+      "name": "Document",
+      "color": "bg-green-100 text-green-800",
+      "defaultImageUrl": "https://static.casescope.com/uploads/e0363e14-117a-47e2-9863-f90d985f2781.png"
+    },
+    {
+      "id": "digital",
+      "name": "Digital",
+      "color": "bg-purple-100 text-purple-800"
+    },
+    {
+      "id": "forensic",
+      "name": "Forensic",
+      "color": "bg-orange-100 text-orange-800"
+    },
+    {
+      "id": "photo",
+      "name": "Photo",
+      "color": "bg-pink-100 text-pink-800"
+    },
+    {
+      "id": "testimonial",
+      "name": "Testimonial",
+      "color": "bg-cyan-100 text-cyan-800"
+    },
+    {
+      "id": "audio",
+      "name": "Audio",
+      "color": "bg-lime-100 text-lime-800",
+      "defaultImageUrl": "https://static.casescope.com/uploads/49bb4ae8-829b-44fc-aceb-c1590a15af49.png"
+    },
+    {
+      "id": "cctv",
+      "name": "CCTV",
+      "color": "bg-indigo-100 text-indigo-800"
+    },
+    {
+      "id": "sms",
+      "name": "SMS",
+      "color": "bg-purple-100 text-purple-800",
+      "defaultImageUrl": "https://static.casescope.com/uploads/4fbec10c-d0b2-40d3-b3d1-a5d3a41296cf.png"
+    },
+    {
+      "id": "email",
+      "name": "Email",
+      "color": "bg-purple-100 text-purple-800",
+      "defaultImageUrl": "https://static.casescope.com/uploads/20bc4d15-0802-4c03-b08a-ffda6a8105d6.png"
+    },
+    {
+      "id": "event",
+      "name": "Event",
+      "color": "bg-yellow-100 text-yellow-800"
+    }
+  ],
+  "exportDate": "2025-07-21T22:19:46.147Z",
+  "version": "1.2"
+}

@@ -1,0 +1,457 @@
+{
+  "evidence": [
+    {
+      "id": "1",
+      "name": "Hammer",
+      "description": "A claw hammer found in the trunk of James Lee's car. Forensic analysis shows traces of Mei-Ling Wong's DNA but no fingerprints. The hammer appears to have been wiped clean.",
+      "type": "physical",
+      "location": "James Lee's car trunk",
+      "imageUrl": "https://static.casescope.com/uploads/8872c434-17b9-4e45-8d7b-d5119ec485dd.png",
+      "timeDiscovered": "2028-02-16T11:00",
+      "timeDiscoveredDescription": "Discovered by Detective",
+      "isHidden": false
+    },
+    {
+      "id": "3",
+      "name": "CCTV: Deleted 2/15/28 10:00pm",
+      "description": "Computer logs reveal that approximately 2 hour of security footage (10pm - 12am) from the night of the murder was deleted.",
+      "type": "cctv",
+      "location": "Office Computer",
+      "imageUrl": "https://static.casescope.com/uploads/0ea26a0b-f3cb-43b2-8d48-02c31985753c.png",
+      "timeHappened": "2028-02-15T22:00",
+      "isHidden": false
+    },
+    {
+      "id": "4",
+      "name": "Document: Eviction Notice",
+      "description": "Official eviction notice served to Wong's Traditional Apothecary dated February 1, 2028. The notice cites redevelopment plans for the Hayes Valley area and gives 60 days to vacate.",
+      "type": "document",
+      "location": "Office",
+      "timeHappened": "2028-02-01T10:00",
+      "isHidden": false
+    },
+    {
+      "id": "5",
+      "name": "Email: Emily's Termination",
+      "description": "Email from Mei-Ling to Emily Patel dated February 15, 2028 at 10:30 AM: 'Emily, due to recent incidents and your behavior, your employment is terminated effective immediately. Please return your keys.'",
+      "type": "email",
+      "timeHappened": "2028-02-15T10:30",
+      "isHidden": false
+    },
+    {
+      "id": "6",
+      "name": "SMS: Sophia to Mei-Ling",
+      "description": "Text message from Mei-Ling to Sophia at 11:15 AM on February 15: 'I changed the computer password to 'LunarNew2028' - don't want Emily accessing anything after I fired her this morning.'",
+      "type": "sms",
+      "location": "Sophia Wong's phone",
+      "timeHappened": "2028-02-15T11:15",
+      "isHidden": false
+    },
+    {
+      "id": "7",
+      "name": "Document: James Lee Unemployment",
+      "description": "Unemployment termination document showing James Lee was laid off from his construction job on January 20, 2028. He has been unemployed for nearly a month.",
+      "type": "document",
+      "location": "Office",
+      "timeHappened": "2028-01-20T11:00",
+      "isHidden": false
+    },
+    {
+      "id": "8",
+      "name": "Company Credit Card Statement",
+      "description": "Recent company credit card activities showing James Lee made personal purchases with company credit card. This includes frequent charges to Murphy's Bar, including a recent one on February 15 between 9:30-11:45 PM - during the estimated time of murder.",
+      "type": "digital",
+      "location": "Office Computer",
+      "timeHappened": "2028-02-16T00:01",
+      "isHidden": false
+    },
+    {
+      "id": "9",
+      "name": "Audio: Sophia and Mei-Ling Wong",
+      "description": "Audio recording a heated argument with Mei-Ling: 'You're kicking me out for that man? This is our family's legacy!' 'James needs a place to stay and you're 28 years old!' Recorded February 10, 2028.",
+      "type": "audio",
+      "location": "James Lee Phone",
+      "timeHappened": "2028-02-10T11:00",
+      "isHidden": false
+    },
+    {
+      "id": "10",
+      "name": "Sophia's Interview",
+      "description": "Sophia Wong's police statement: 'My mother and James fought about money constantly. I hate him. James killed my mother - he was always using the company credit card for personal things like going to bars.'",
+      "type": "testimonial",
+      "imageUrl": "https://static.casescope.com/uploads/45546228-f120-47b5-b13c-784e9d9addf1.png",
+      "isHidden": false
+    },
+    {
+      "id": "11",
+      "name": "James's Interview",
+      "description": "James Lee's police statement: 'I was at Murphy's Bar that night. I don't have my car keys - Sophia borrowed my car earlier. Yes, that's my hammer, but I don't know how it got in my trunk. Mei-Ling was kicking Sophia out so I could move in.'",
+      "type": "testimonial",
+      "imageUrl": "https://static.casescope.com/uploads/db041dff-7a33-4e25-b2e0-8fc326de9bb7.png",
+      "isHidden": false
+    },
+    {
+      "id": "12",
+      "name": "Emily's Testimonial",
+      "description": "Emily Patel's police statement: 'I didn't kill her. I was at home all evening. Yes, she fired me that morning, but I would never hurt anyone. I've been struggling lately, but I'm not violent.'",
+      "type": "testimonial",
+      "imageUrl": "https://static.casescope.com/uploads/b60fb714-e8db-4c15-af06-6fa3ca559b36.png",
+      "isHidden": false
+    },
+    {
+      "id": "13",
+      "name": "Ling's Testimonial",
+      "description": "Ling Chen's statement: 'I've known Mei-Ling for 20 years. I saw Emily sneaking around the store at odd hours recently - something wasn't right with that girl. But I also heard James and Mei-Ling having a huge fight earlier that night.'",
+      "type": "testimonial",
+      "imageUrl": "https://static.casescope.com/uploads/6b0344e5-d4ff-4c62-b9c7-1eb6a1c5dc68.png",
+      "isHidden": false
+    },
+    {
+      "id": "14",
+      "name": "James Lee Car Keys",
+      "description": "Set of keys found in the office which can open James Lee's car.",
+      "type": "physical",
+      "location": "Office",
+      "imageUrl": "https://static.casescope.com/uploads/2ee863b3-f95a-4648-b350-7ead9aa63843.png",
+      "timeDiscovered": "2028-02-16T10:45",
+      "timeDiscoveredDescription": "Discovered by Detective",
+      "isHidden": false
+    },
+    {
+      "id": "15",
+      "name": "Modernization Project Plans",
+      "description": "Detailed business plans to modernize the apothecary, including loan applications and architectural sketches. All last edited by Sophia Wong, but created and dated weeks before the murder.",
+      "type": "digital",
+      "location": "Office Computer",
+      "isHidden": false
+    },
+    {
+      "id": "17",
+      "name": "Document: Emily's Medical Records",
+      "description": "Recent psychiatric evaluation showing Emily has been receiving treatment for anxiety and depression. Doctor's notes mention 'workplace stress' and 'verbal abuse from supervisor' as contributing factors.",
+      "type": "document",
+      "isHidden": false
+    },
+    {
+      "id": "18",
+      "name": "CCTV: Sophia 2/15/28 8:00pm",
+      "description": "Security camera footage shows Sophia Wong at the store at 8pm cleaning up. She is not seen going in and out of office.",
+      "type": "cctv",
+      "location": "CCTV System",
+      "timeHappened": "2028-02-15T20:00",
+      "isHidden": false
+    },
+    {
+      "id": "19",
+      "name": "CCTV: James 2/15/28 9:00pm",
+      "description": "Security camera footage shows James Lee and Mei-Ling Wong arguing in the store. Eventually, James walks away, while Mei-Ling goes into office.",
+      "type": "cctv",
+      "location": "CCTV System",
+      "imageUrl": "https://static.casescope.com/uploads/3f124523-c992-431c-a2e0-975672d7b680.jpg",
+      "timeHappened": "2028-02-15T21:00",
+      "isHidden": false
+    },
+    {
+      "id": "20",
+      "name": "CCTV: Emily 2/16/28 1:00am",
+      "description": "Security camera footage shows Emily Patel at the store around 1am. She does not go in or out of office",
+      "type": "cctv",
+      "location": "CCTV System",
+      "imageUrl": "https://static.casescope.com/uploads/63380345-d28a-4f8e-9e2e-beb8518a4920.jpg",
+      "timeHappened": "2028-02-16T01:00",
+      "isHidden": false
+    },
+    {
+      "id": "1752190796911",
+      "name": "Office Computer",
+      "description": "Locked Computer in Mei-Ling's office",
+      "type": "physical",
+      "location": "Office",
+      "imageUrl": "https://static.casescope.com/uploads/b47a0bb0-f4ff-4848-bb39-bb91d3ec0e8c.png",
+      "isHidden": false
+    },
+    {
+      "id": "1752270114946",
+      "name": "Time of Death",
+      "description": "Time of Death 10:30PM",
+      "type": "event",
+      "location": "",
+      "imageUrl": "",
+      "timeHappened": "2028-02-15T22:30",
+      "timeDiscovered": "",
+      "timeHappenedAnchor": true,
+      "timeDiscoveredAnchor": false,
+      "timeHappenedDescription": "",
+      "timeDiscoveredDescription": "",
+      "isHidden": false
+    },
+    {
+      "id": "1752270258011",
+      "name": "Body Discovered",
+      "description": "Body Discovered 2/16 10am by Ling Chen",
+      "type": "event",
+      "location": "Office",
+      "imageUrl": "",
+      "timeHappened": "",
+      "timeDiscovered": "2028-02-16T10:00",
+      "timeHappenedAnchor": false,
+      "timeDiscoveredAnchor": true,
+      "timeHappenedDescription": "",
+      "timeDiscoveredDescription": "",
+      "isHidden": false
+    }
+  ],
+  "connections": [
+    {
+      "id": "1",
+      "evidenceIds": [
+        "1",
+        "11"
+      ],
+      "clue": "James admits the hammer is his, but claims he doesn't know how it got in his car trunk. The lack of fingerprints suggests someone else handled it after wiping it clean.",
+      "discovered": false,
+      "connects": true,
+      "isRedHerring": false,
+      "confirmationType": "confirmation",
+      "means": true
+    },
+    {
+      "id": "3",
+      "evidenceIds": [
+        "11",
+        "14"
+      ],
+      "clue": "James claims he didnt have his car keys last night. Keys were found in the office.",
+      "discovered": false,
+      "connects": true,
+      "confirmationType": "confirmation",
+      "means": true
+    },
+    {
+      "id": "5",
+      "evidenceIds": [
+        "13",
+        "17"
+      ],
+      "clue": "Ling Chen's observations about Emily's odd behavior align with her medical records showing mental health struggles, but this points to someone who was suffering, not planning murder.",
+      "discovered": false,
+      "connects": true,
+      "isRedHerring": false,
+      "confirmationType": "confirmation"
+    },
+    {
+      "id": "6",
+      "evidenceIds": [
+        "3",
+        "5"
+      ],
+      "clue": "The CCTV footage was deleted after Emily was fired and lost access to the computer system. She couldn't have deleted the footage without the password.",
+      "discovered": false,
+      "connects": true,
+      "confirmationType": "contradiction",
+      "opportunity": false
+    },
+    {
+      "id": "7",
+      "evidenceIds": [
+        "6",
+        "3"
+      ],
+      "clue": "Mei-Ling gave Sophia the new computer password meaning Sophia had the access to computer.",
+      "discovered": false,
+      "connects": true,
+      "confirmationType": "confirmation",
+      "opportunity": true
+    },
+    {
+      "id": "8",
+      "evidenceIds": [
+        "9",
+        "4"
+      ],
+      "clue": "The recorded argument shows Sophia's desperation about losing the family legacy, directly connected to the eviction notice. Her motive was preserving what she saw as her birthright.",
+      "discovered": false,
+      "connects": true,
+      "confirmationType": "confirmation",
+      "motive": true
+    },
+    {
+      "id": "10",
+      "evidenceIds": [
+        "15",
+        "9"
+      ],
+      "clue": "Sophia's modernization plans show she was trying to save the business, but her mother's decision to kick her out (heard in the recording) altered that plan.",
+      "discovered": false,
+      "connects": true,
+      "confirmationType": "confirmation",
+      "motive": true
+    },
+    {
+      "id": "13",
+      "evidenceIds": [
+        "17",
+        "4"
+      ],
+      "clue": "Emily's medical records and the eviction notice don't provide any meaningful connection - her mental health issues were related to workplace abuse, not the family's business problems.",
+      "discovered": false,
+      "connects": false
+    },
+    {
+      "id": "16",
+      "evidenceIds": [
+        "19",
+        "13"
+      ],
+      "clue": "The 9pm CCTV footage confirms Ling Chen's witness statement about James and Mei-Ling having a huge fight. This shows James left after the argument, while Mei-Ling went to her office alone.",
+      "discovered": false,
+      "connects": true,
+      "confirmationType": "confirmation",
+      "isRedHerring": false
+    },
+    {
+      "id": "18",
+      "evidenceIds": [
+        "20",
+        "12"
+      ],
+      "clue": "Emily's CCTV footage at 1am shows her at the store after the murder, but she doesn't enter the office. This supports her statement that she didn't kill Mei-Ling, though her presence is still suspicious.",
+      "discovered": false,
+      "connects": true,
+      "confirmationType": "confirmation",
+      "isRedHerring": true
+    },
+    {
+      "id": "21",
+      "evidenceIds": [
+        "14",
+        "1"
+      ],
+      "clue": "James's car keys was found in the office and was used to open James' trunk were the hammer was found.",
+      "discovered": false,
+      "connects": true,
+      "confirmationType": "confirmation",
+      "means": true,
+      "opportunity": true
+    },
+    {
+      "id": "22",
+      "evidenceIds": [
+        "20",
+        "5"
+      ],
+      "clue": "Emily's 1am appearance at the store was after she was fired that morning. No indication she went in and out of the office were the body was.",
+      "discovered": false,
+      "connects": true,
+      "isRedHerring": false,
+      "confirmationType": "confirmation"
+    },
+    {
+      "id": "1752191418288",
+      "evidenceIds": [
+        "1752190796911",
+        "6"
+      ],
+      "clue": "Password to computer was changed to lock out Emily Patel. Only few people would have access to the computer that night.",
+      "discovered": false,
+      "connects": true,
+      "isRedHerring": false,
+      "confirmationType": "confirmation",
+      "means": true,
+      "motive": false,
+      "opportunity": false
+    },
+    {
+      "id": "1752509201899",
+      "evidenceIds": [
+        "18",
+        "10"
+      ],
+      "clue": "Sophia said she was at home, but the CCTV show she was at store at 8pm.",
+      "discovered": false,
+      "connects": true,
+      "isRedHerring": false,
+      "confirmationType": "contradiction",
+      "means": false,
+      "motive": false,
+      "opportunity": false
+    }
+  ],
+  "gameSettings": {
+    "maxAttempts": 0,
+    "caseTitle": "The Wong Family Murder Mystery",
+    "objective": "Investigate the murder of herbalist Mei-Ling Wong during Lunar New Year festivities. ",
+    "questionType": "timeline",
+    "questionText": "Arrange the evidence in chronological order to understand the sequence of events leading to the murder.",
+    "maxEvidenceSelection": 2,
+    "invalidConnection": "These pieces of evidence don't reveal any meaningful connection in solving Mei-Ling Wong's murder."
+  },
+  "evidenceTypes": [
+    {
+      "id": "physical",
+      "name": "Physical",
+      "color": "bg-red-100 text-red-800"
+    },
+    {
+      "id": "witness",
+      "name": "Witness",
+      "color": "bg-blue-100 text-blue-800"
+    },
+    {
+      "id": "document",
+      "name": "Document",
+      "color": "bg-green-100 text-green-800",
+      "defaultImageUrl": "https://static.casescope.com/uploads/e0363e14-117a-47e2-9863-f90d985f2781.png"
+    },
+    {
+      "id": "digital",
+      "name": "Digital",
+      "color": "bg-purple-100 text-purple-800"
+    },
+    {
+      "id": "forensic",
+      "name": "Forensic",
+      "color": "bg-orange-100 text-orange-800"
+    },
+    {
+      "id": "photo",
+      "name": "Photo",
+      "color": "bg-pink-100 text-pink-800"
+    },
+    {
+      "id": "testimonial",
+      "name": "Testimonial",
+      "color": "bg-cyan-100 text-cyan-800"
+    },
+    {
+      "id": "audio",
+      "name": "Audio",
+      "color": "bg-lime-100 text-lime-800",
+      "defaultImageUrl": "https://static.casescope.com/uploads/49bb4ae8-829b-44fc-aceb-c1590a15af49.png"
+    },
+    {
+      "id": "cctv",
+      "name": "CCTV",
+      "color": "bg-indigo-100 text-indigo-800"
+    },
+    {
+      "id": "sms",
+      "name": "SMS",
+      "color": "bg-purple-100 text-purple-800",
+      "defaultImageUrl": "https://static.casescope.com/uploads/4fbec10c-d0b2-40d3-b3d1-a5d3a41296cf.png"
+    },
+    {
+      "id": "email",
+      "name": "Email",
+      "color": "bg-purple-100 text-purple-800",
+      "defaultImageUrl": "https://static.casescope.com/uploads/20bc4d15-0802-4c03-b08a-ffda6a8105d6.png"
+    },
+    {
+      "id": "event",
+      "name": "Event",
+      "color": "bg-yellow-100 text-yellow-800"
+    }
+  ],
+  "exportDate": "2025-07-21T21:33:09.461Z",
+  "version": "1.2"
+}

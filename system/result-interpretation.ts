@@ -29,10 +29,19 @@ export function interpretResult(
 
   // endregion Frozen
 
-  // Example: 
-  // if (config.expectedResultType === ModuleResultType.Attempt) {
-  //   actionToTrigger = BaseActions.AnotherAction
-  // }
+  // Timeline game result interpretation
+  if (config.expectedResultType === ModuleResultType.Attempt) {
+    // resultData should be the score (0-100)
+    const score = resultData || 0;
+    
+    if (score === 100) {
+      actionToTrigger = 'TimelinePerfect' as any;
+    } else if (score >= 70) {
+      actionToTrigger = 'TimelineSuccess' as any;
+    } else {
+      actionToTrigger = 'TimelineFailed' as any;
+    }
+  }
 
   // region Frozen
 

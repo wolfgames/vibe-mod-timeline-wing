@@ -8,6 +8,26 @@ import { originConfig } from './origins';
 import { interpretResult } from './result-interpretation';
 // endregion Frozen
 
+// Timeline game imports
+import { CaseLoader, TimelineEvidence, EvidenceType, CaseData } from './case-loader';
+import { TimelineValidator, ValidationResult } from './timeline-validation';
+import EvidencePool from '@/components/EvidencePool';
+import TimelineZone from '@/components/TimelineZone';
+import GameControls from '@/components/GameControls';
+
+interface GameState {
+  caseData: CaseData | null;
+  selectedEvidence: TimelineEvidence[];
+  poolEvidence: TimelineEvidence[];
+  timelineEvidence: TimelineEvidence[];
+  attemptsLeft: number;
+  isComplete: boolean;
+  validationResult: ValidationResult | null;
+  hintCount: number;
+  currentHint: string | null;
+  isLoading: boolean;
+}
+
 const Component = ({ }) => {
 
   // region Frozen
@@ -22,10 +42,60 @@ const Component = ({ }) => {
   // endregion Frozen
 
   // state affected by operations
-  const [title, setTitle] = useState<string>("Module Template");
+  const [title, setTitle] = useState<string>("Detective Timeline Puzzle");
 
   // aspects record
   const [aspects, setAspects] = useState<Record<string, any>>({});
+
+  // Timeline game state
+  const [gameState, setGameState] = useState<GameState>({
+    caseData: null,
+    selectedEvidence: [],
+    poolEvidence: [],
+    timelineEvidence: [],
+    attemptsLeft: 3,
+    isComplete: false,
+    validationResult: null,
+    hintCount: 0,
+    currentHint: null,
+    isLoading: false,
+  });
+
+  // Load case data when config changes
+  useEffect(() => {
+    if (config?.selectedCase) {
+      setGameState(prev => ({ ...prev, isLoading: true }));
+      
+      CaseLoader.loadCase(config.selectedCase)
+        .then(caseData => {
+          const selectedEvidence = CaseLoader.filterEvidenceByDifficulty(
+            caseData.evidence,
+            config.difficulty
+          );
+          
+          // Shuffle evidence for the pool
+          const shuffledEvidence = CaseLoader.shuffleArray(selectedEvidence);
+          
+          setGameState(prev => ({
+            ...prev,
+            caseData,
+            selectedEvidence,
+            poolEvidence: shuffledEvidence,
+            timelineEvidence: [],
+            attemptsLeft: config.maxAttempts,
+            isComplete: false,
+            validationResult: null,
+            hintCount: 0,
+            currentHint: null,
+            isLoading: false,
+          }));
+        })
+        .catch(error => {
+          console.error('Failed to load case:', error);
+          setGameState(prev => ({ ...prev, isLoading: false }));
+        });
+    }
+  }, [config]);
 
   useEffect(() => {
     if (!lastOperation) {
@@ -111,6 +181,119 @@ const Component = ({ }) => {
     }
   }, [moduleCommunicator, aspectsPermissions]);
 
+  // Game action handlers
+  const handleMoveToTimeline = useCallback((evidenceId: string) => {
+    setGameState(prev => {
+      const evidence = prev.poolEvidence.find(e => e.id === evidenceId);
+      if (!evidence) return prev;
+
+      return {
+        ...prev,
+        poolEvidence: prev.poolEvidence.filter(e => e.id !== evidenceId),
+        timelineEvidence: [...prev.timelineEvidence, evidence],
+        validationResult: null, // Clear previous validation
+      };
+    });
+  }, []);
+
+  const handleTimelineReorder = useCallback((newOrder: string[]) => {
+    setGameState(prev => {
+      const reorderedEvidence = newOrder.map(id =>
+        prev.timelineEvidence.find(e => e.id === id)!
+      ).filter(Boolean);
+
+      return {
+        ...prev,
+        timelineEvidence: reorderedEvidence,
+        validationResult: null, // Clear previous validation
+      };
+    });
+  }, []);
+
+  const handleCheckOrder = useCallback(() => {
+    if (!gameState.timelineEvidence.length || gameState.isComplete) return;
+
+    setGameState(prev => ({ ...prev, isLoading: true }));
+
+    // Simulate brief loading for better UX
+    setTimeout(() => {
+      const result = TimelineValidator.validateOrder(
+        gameState.timelineEvidence.map(e => e.id),
+        gameState.timelineEvidence
+      );
+
+      const newAttemptsLeft = result.isCorrect ? gameState.attemptsLeft : gameState.attemptsLeft - 1;
+      const isComplete = result.isCorrect || newAttemptsLeft <= 0;
+
+      setGameState(prev => ({
+        ...prev,
+        validationResult: result,
+        attemptsLeft: newAttemptsLeft,
+        isComplete,
+        isLoading: false,
+      }));
+
+      // Report result to parent if game is complete
+      if (isComplete && resultHandler && config && actions) {
+        let actionKey = 'Done';
+        
+        if (result.isCorrect) {
+          actionKey = result.score === 100 ? 'TimelinePerfect' : 'TimelineSuccess';
+        } else {
+          actionKey = 'TimelineFailed';
+        }
+
+        resultHandler({
+          data: result.score,
+          config,
+          actions: { [actionKey]: actions[actionKey] || actions.Done }
+        });
+      }
+    }, 500);
+  }, [gameState, resultHandler, config, actions]);
+
+  const handleReset = useCallback(() => {
+    if (!config) return;
+
+    const shuffledEvidence = CaseLoader.shuffleArray(gameState.selectedEvidence);
+    
+    setGameState(prev => ({
+      ...prev,
+      poolEvidence: shuffledEvidence,
+      timelineEvidence: [],
+      validationResult: null,
+      currentHint: null,
+    }));
+  }, [config, gameState.selectedEvidence]);
+
+  const handleShuffle = useCallback(() => {
+    const shuffledPool = CaseLoader.shuffleArray(gameState.poolEvidence);
+    const shuffledTimeline = CaseLoader.shuffleArray(gameState.timelineEvidence);
+    
+    setGameState(prev => ({
+      ...prev,
+      poolEvidence: shuffledPool,
+      timelineEvidence: shuffledTimeline,
+      validationResult: null,
+    }));
+  }, [gameState.poolEvidence, gameState.timelineEvidence]);
+
+  const handleHint = useCallback(() => {
+    if (gameState.hintCount >= 3 || !gameState.timelineEvidence.length) return;
+
+    const hint = TimelineValidator.generateHint(
+      gameState.timelineEvidence.map(e => e.id),
+      gameState.timelineEvidence,
+      gameState.hintCount + 1
+    );
+
+    setGameState(prev => ({
+      ...prev,
+      hintCount: prev.hintCount + 1,
+      currentHint: hint,
+    }));
+  }, [gameState]);
+
   const reportExecutionResult = useCallback(() => {
     if (!resultHandler || !config || !moduleCommunicator || !actions) {
       const missingComponents = [];
@@ -124,7 +307,7 @@ const Component = ({ }) => {
 
     if (config.expectedResultType === ModuleResultType.Attempt) {
       resultHandler({
-        data: 1,
+        data: gameState.validationResult?.score || 0,
         config,
         actions
       });
@@ -137,39 +320,109 @@ const Component = ({ }) => {
         actions
       });
     }
-  }, [actions, config, resultHandler, moduleCommunicator]);
+  }, [actions, config, resultHandler, moduleCommunicator, gameState.validationResult]);
 
-  return <div className="w-full h-full flex items-center justify-center">
-    {config ? (
-      <div className="text-center">
-        <h1 className="text-2xl font-bold mb-4">Operations test: {title}</h1>
-        <p className="text-lg mb-2">Module ID: {moduleUid}</p>
-        <p className="text-sm text-gray-500">Expected result type: {config.expectedResultType}</p>
-        <p className="text-sm text-gray-500">Available actions: {JSON.stringify(actions, null, 2)}</p>
+  if (!config) {
+    return (
+      <div className="w-full h-full flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading detective case...</p>
+        </div>
+      </div>
+    );
+  }
 
-        <div className="mt-4 p-2 bg-gray-100 text-left text-xs">
-          <h3 className="font-bold">Received Aspects:</h3>
-          <pre>{JSON.stringify(aspects, null, 2)}</pre>
+  if (gameState.isLoading) {
+    return (
+      <div className="w-full h-full flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading {gameState.caseData?.gameSettings.caseTitle || 'case'}...</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="w-full min-h-screen bg-gray-50 p-4">
+      <div className="max-w-md mx-auto">
+        {/* Game Header */}
+        <div className="text-center mb-6">
+          <h1 className="text-2xl font-bold text-gray-800 mb-2">
+            🕵️ {gameState.caseData?.gameSettings.caseTitle || 'Detective Timeline Puzzle'}
+          </h1>
+          <p className="text-sm text-gray-600 mb-4">
+            {gameState.caseData?.gameSettings.objective}
+          </p>
+          <div className="text-xs text-gray-500">
+            Difficulty: <span className="font-medium capitalize">{config.difficulty}</span>
+          </div>
         </div>
 
-        <button
-          className="mt-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
-          onClick={() => requestAspectChange('Viewed', (aspects.Viewed || 0) + 1)}
-        >
-          Request Aspect Change (Viewed +1)
-        </button>
-        
-        <button
-          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-          onClick={reportExecutionResult}
-        >
-          Report Execution Result
-        </button>
+        {/* Current Hint Display */}
+        {gameState.currentHint && (
+          <div className="mb-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+            <p className="text-sm text-yellow-800">{gameState.currentHint}</p>
+          </div>
+        )}
+
+        {/* Game Controls */}
+        <GameControls
+          onCheckOrder={handleCheckOrder}
+          onReset={handleReset}
+          onHint={handleHint}
+          onShuffle={handleShuffle}
+          attemptsLeft={gameState.attemptsLeft}
+          maxAttempts={config.maxAttempts}
+          showHints={config.showHints}
+          isComplete={gameState.isComplete}
+          isLoading={gameState.isLoading}
+          hintCount={gameState.hintCount}
+          className="mb-6"
+        />
+
+        {/* Evidence Pool */}
+        {gameState.poolEvidence.length > 0 && (
+          <EvidencePool
+            evidence={gameState.poolEvidence}
+            evidenceTypes={gameState.caseData?.evidenceTypes || []}
+            onMoveToTimeline={handleMoveToTimeline}
+            className="mb-6"
+          />
+        )}
+
+        {/* Timeline Zone */}
+        <TimelineZone
+          evidence={gameState.timelineEvidence}
+          evidenceTypes={gameState.caseData?.evidenceTypes || []}
+          onReorder={handleTimelineReorder}
+          validationResult={gameState.validationResult || undefined}
+          className="mb-6"
+        />
+
+        {/* Debug Info (only in development) */}
+        {process.env.NODE_ENV === 'development' && (
+          <div className="mt-8 p-4 bg-gray-100 rounded-lg text-xs">
+            <details>
+              <summary className="font-bold cursor-pointer">Debug Info</summary>
+              <div className="mt-2 space-y-2">
+                <div>Module ID: {moduleUid}</div>
+                <div>Config: {JSON.stringify(config, null, 2)}</div>
+                <div>Game State: {JSON.stringify({
+                  attemptsLeft: gameState.attemptsLeft,
+                  isComplete: gameState.isComplete,
+                  hintCount: gameState.hintCount,
+                  poolCount: gameState.poolEvidence.length,
+                  timelineCount: gameState.timelineEvidence.length,
+                }, null, 2)}</div>
+              </div>
+            </details>
+          </div>
+        )}
       </div>
-    ) : (
-      <p>loading...</p>
-    )}
-  </div>;
+    </div>
+  );
 };
 
 export default Component;

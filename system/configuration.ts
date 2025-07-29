@@ -5,13 +5,26 @@ import { AppActionsSchema } from "./actions";
 // region Generated
 const moduleConfiguration = z.object({
   resultAction: AppActionsSchema,
+  selectedCase: z.enum(["WongTimeline", "midnightOilTimeline2", "beaumontTimeline2"]),
+  difficulty: z.enum(["easy", "medium", "hard"]),
+  maxAttempts: z.number().min(1).max(10),
+  showHints: z.boolean(),
+  timeLimit: z.number().optional(),
 });
 
 /**
  * Form state interface for configuration form
  */
-export interface ConfigFormData extends ModuleConfig {
-  resultAction: BaseActions.Done;
+export interface ConfigFormData {
+  replayAbility: ModuleReplayAbility;
+  expectedResultType: ModuleResultType;
+  integrationType: ModuleIntegrationType;
+  resultAction: BaseActions;
+  selectedCase: "WongTimeline" | "midnightOilTimeline2" | "beaumontTimeline2";
+  difficulty: "easy" | "medium" | "hard";
+  maxAttempts: number;
+  showHints: boolean;
+  timeLimit?: number;
 }
 
 /**
@@ -21,7 +34,11 @@ export const DEFAULT_CONFIG: ConfigFormData = {
   replayAbility: ModuleReplayAbility.Once,
   expectedResultType: ModuleResultType.Attempt,
   integrationType: ModuleIntegrationType.Standalone,
-  resultAction: BaseActions.Done
+  resultAction: BaseActions.Done,
+  selectedCase: "WongTimeline",
+  difficulty: "medium",
+  maxAttempts: 3,
+  showHints: true,
 }
 // endregion Generated
 

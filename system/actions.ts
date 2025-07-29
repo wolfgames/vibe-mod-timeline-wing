@@ -3,7 +3,11 @@ import { BaseActions, type BaseActionsType } from 'wolfy-module-kit';
 
 enum CustomActions {
   // add custom module actions here
-  CustomAction = 'custom-action'
+  CustomAction = 'custom-action',
+  TimelinePerfect = 'timeline-perfect',
+  TimelineSuccess = 'timeline-success',
+  TimelineFailed = 'timeline-failed',
+  TimelineAbandoned = 'timeline-abandoned',
 }
 
 // region Frozen
